@@ -1,7 +1,7 @@
 # Para compilar el codigo usamos make + "comando"
 - secuencial -> `make SyP`
 - openmp -> `make openmp`
-- mpi ->
+- mpi -> `make mpi`
 
 
 ## Si queremos ejecutar el algoritmo secuencial ejecutamos:
