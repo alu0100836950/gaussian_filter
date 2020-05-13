@@ -1,11 +1,14 @@
 default: sec
 
-SyP:
-	mpicxx -o syp src/SyP.cpp `pkg-config --libs --cflags opencv4`
+sec:
+	mpicxx -o secuencial src/prueba.cpp `pkg-config --libs --cflags opencv`
 
 openmp:
-	mpicxx -o syp_openmp -fopenmp src/SyP_openmp.cpp `pkg-config --libs --cflags opencv4`
+	mpicxx -o openmp -fopenmp src/prueba.cpp `pkg-config --libs --cflags opencv`
 
-mpimodify:
-	mpicxx -o syp_mpi src/SyP_mpi.cpp `pkg-config --libs --cflags opencv4`
-	
+mpi:
+	mpicxx -o mpi src/prueba_mpi.cpp `pkg-config --libs --cflags opencv`
+
+
+
+

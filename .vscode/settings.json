@@ -5,6 +5,8 @@
         "array": "cpp",
         "string_view": "cpp",
         "new": "cpp",
-        "string": "cpp"
+        "string": "cpp",
+        "initializer_list": "cpp",
+        "utility": "cpp"
     }
 }

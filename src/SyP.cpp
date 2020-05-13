@@ -1,5 +1,5 @@
 #include </usr/include/opencv4/opencv2/highgui/highgui.hpp>
-#include<iostream>
+#include <iostream>
 #include "mpi.h"
 
 using namespace std;
@@ -8,18 +8,20 @@ using namespace cv;
 void imprimir(Mat m);
 void salypimienta(Mat im, int n);
 
-int main(int argc, char *argv[]) {
+int main(int argc, char *argv[]){
     
+
     Mat imagen = imread(argv[1], IMREAD_GRAYSCALE);
     cout << "La imagen mide " << imagen.rows << " x " << imagen.cols << " pixeles" << endl;
     
     // Processing
     double startTime = MPI_Wtime();
-    salypimienta(imagen, argv[2]);
+    salypimienta(imagen,50000);
     double totalTime = MPI_Wtime() - startTime;
     
     //show image
     imshow("Imagen transformada", imagen);
+    imwrite(argv[2], imagen);
     
     cout << "Time: " << totalTime << "segundos" << endl;
     //imprimir(imagen);
@@ -53,7 +55,7 @@ void salypimienta(Mat im, int n) {
         i = rand() % im.cols;
         j = rand() % im.rows;
         int a = rand() % 2;
-        cout << a << endl;
+        //cout << a << endl;
         if (a==1){
             im.at<uchar>(j, i) = 255;
         }

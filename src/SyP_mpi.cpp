@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
     Mat *aux_imagen = new Mat(*sub_imagen);
     Mat *aux_result = new Mat(*sub_result);
 
-    salypimienta(aux_imagen, 5000);
+    salypimienta(aux_imagen, 30000);
     MPI_Barrier(MPI_COMM_WORLD);
 
 
@@ -111,6 +111,7 @@ int main(int argc, char *argv[]){
     
         //show image
         imshow("Imagen transformada", *result);
+        imwrite(argv[2], *result);
         
         cout << "Time: " << totalTime << "segundos" << endl;
         
